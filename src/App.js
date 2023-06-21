@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import About from "./components/About";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Project from "./components/Project";
+import CodingCertification from "./components/CodingCertification";
+import Education from "./components/Education";
+import CruserAnimal from "./components/CruserAnimal";
+import CruserLiveNews from "./components/CruserLiveNews";
+import CruserWhatsapp from "./components/CruserWhatsapp";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/project" element={<Project />} />
+          <Route exact path="/coding" element={<CodingCertification />} />
+          <Route exact path="/education" element={<Education />} />
+          <Route exact path="/animal" element={<CruserAnimal />} />
+          <Route exact path="/livenews" element={<CruserLiveNews />} />
+          <Route exact path="/whatsapp" element={<CruserWhatsapp />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
